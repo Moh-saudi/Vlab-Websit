@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>V LAB AI Qatar — مختبر تدريب نماذج الذكاء الاصطناعي</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#050b2e;--blue:#0a3aa8;--teal:#07a596;--purple:#5b21b6;--bg:#fff;--ink:#0b1646;--mut:#56608a;--line:#e4e8f3;--soft:#f4f7fc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070d24;--ink:#eef2ff;--mut:#a5b0d6;--line:#1c2750;--soft:#0b1334}}
+:root[data-theme="dark"]{--bg:#070d24;--ink:#eef2ff;--mut:#a5b0d6;--line:#1c2750;--soft:#0b1334}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic','Sora',sans-serif;line-height:1.8;overflow-x:hidden}
+html[lang=en] body{font-family:'Sora','IBM Plex Sans Arabic',sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.w{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:fixed;inset:0 0 auto 0;z-index:30;background:#fff;box-shadow:0 1px 0 #e4e8f3;padding-top:env(safe-area-inset-top,0px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;color:#0b1646}
+.nav img{height:40px;width:auto}
+nav{display:flex;gap:30px;font-size:.95rem;font-weight:600}nav a{opacity:.75;transition:opacity .2s,color .2s}nav a:hover{opacity:1;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 30px;border-radius:6px;font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--teal);background:var(--teal);color:#fff;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(7,165,150,.4)}
+.btn.g{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.lang{padding:8px 16px;font-size:.82rem;background:transparent;color:#0b1646;border-color:#cfd6ea}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;background-size:cover;background-position:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(5,11,46,.94) 20%,rgba(5,11,46,.55) 60%,rgba(5,11,46,.15))}
+html[dir=ltr] .hero::before{background:linear-gradient(to right,rgba(5,11,46,.94) 20%,rgba(5,11,46,.55) 60%,rgba(5,11,46,.15))}
+.hero .w{position:relative;z-index:2;padding-top:120px;padding-bottom:90px}
+.tag{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(255,255,255,.35);border-radius:99px;font-size:.85rem;margin-bottom:26px;backdrop-filter:blur(6px)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 var(--teal)}70%,100%{box-shadow:0 0 0 12px transparent}}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.18;margin:0 0 24px;font-weight:700;max-width:11em}
+h1 em{font-style:normal;background:linear-gradient(90deg,#5eead4,#9fb8ff,#c4a6ff,#5eead4);background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 7s linear infinite}
+@keyframes sh{to{background-position:250%}}
+.lead{font-size:1.2rem;font-weight:300;max-width:34em;opacity:.9;margin:0 0 36px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .in{opacity:0;transform:translateY(30px);animation:up .9s forwards}
+.hero .in:nth-child(2){animation-delay:.15s}.hero .in:nth-child(3){animation-delay:.3s}.hero .in:nth-child(4){animation-delay:.45s}
+@keyframes up{to{opacity:1;transform:none}}
+.hero{animation:zoom 22s ease-in-out infinite alternate}@keyframes zoom{from{background-size:100%}to{background-size:112%}}
+.tick{background:var(--navy);color:#fff;overflow:hidden;direction:ltr;padding:18px 0;font-family:Sora,sans-serif;font-size:.9rem;letter-spacing:.14em}
+.tick div{display:flex;gap:56px;width:max-content;animation:mq 34s linear infinite}
+.tick span{opacity:.75;white-space:nowrap}.tick span::after{content:"◆";margin-inline-start:56px;color:var(--teal);font-size:.6rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:110px 0}
+.k{color:var(--teal);font-weight:700;margin-bottom:10px}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.3;margin:0 0 18px;font-weight:700;max-width:16em}
+.sub{color:var(--mut);font-size:1.1rem;max-width:38em;margin:0 0 50px}
+.two{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.ph{border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(10,58,168,.25);position:sticky;top:100px}
+.ph img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:30% center;transition:transform 1.2s}.ph:hover img{transform:scale(1.06)}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr 30px;gap:6px 20px;padding:30px 6px;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
+.row:hover{background:var(--soft);padding-inline:22px}
+.row h3{margin:0;font-size:1.4rem}.row p{margin:0;color:var(--mut);grid-column:1}
+.row b{grid-row:1/3;grid-column:2;align-self:center;color:var(--teal);font-size:1.5rem}
+.lab{background:var(--navy);color:#fff;padding-top:0}
+.banner{height:clamp(260px,42vw,480px);background-size:cover;background-position:center 40%;position:relative;margin-bottom:90px}
+.banner::after{content:"";position:absolute;inset:auto 0 0;height:60%;background:linear-gradient(transparent,var(--navy))}
+.lab .sub{color:#aab4e0}
+.lg{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+.term{background:#030720;border:1px solid rgba(255,255,255,.12);border-radius:12px;direction:ltr;font-family:ui-monospace,Menlo,monospace;font-size:.85rem;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.term .bar{display:flex;gap:7px;padding:12px 16px;background:#0a1240}.term .bar i{width:11px;height:11px;border-radius:50%;background:#33407a}.term .bar i:first-child{background:var(--teal)}.term .bar i:nth-child(2){background:var(--purple)}
+.term pre{margin:0;padding:18px;min-height:250px;white-space:pre-wrap;color:#b9c7ff;line-height:1.75}
+.ok{color:#4be0c4}.g2{color:#b69cff}
+.cur{display:inline-block;width:8px;height:15px;background:var(--teal);vertical-align:middle;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.plat{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pc{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(10,58,168,.18)}
+.pc img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform 1s}.pc:hover img{transform:scale(1.07)}
+.pc div{position:absolute;inset:auto 0 0;padding:60px 26px 22px;background:linear-gradient(transparent,rgba(5,11,46,.92));color:#fff}
+.pc h3{margin:0;font-size:1.25rem}.pc p{margin:0;font-size:.92rem;opacity:.85}
+.eco{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.eco>*{background:var(--bg);padding:40px 34px;display:flex;flex-direction:column;gap:10px;transition:background .3s}
+.eco>*:hover{background:var(--soft)}
+.eco::before{display:none}
+.eco h3{margin:0;font-size:1.4rem}.eco p{margin:0;color:var(--mut);flex:1}
+.eco i{font-style:normal;color:var(--teal);font-weight:700;font-size:.9rem;font-family:Sora,sans-serif;direction:ltr;text-align:start}
+.eco .bar2{width:34px;height:3px;background:linear-gradient(90deg,var(--teal),var(--purple))}
+.lt{height:64px;width:max-content;max-width:100%;border-radius:12px;padding:8px 14px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(10,58,168,.12)}.lt img{height:100%;width:auto}
+.note{color:var(--mut);font-size:.85rem;margin-top:16px}
+.wave{background-size:cover;background-position:center}
+.pr{display:grid;grid-template-columns:repeat(4,1fr);position:relative;margin-top:20px}
+.pr::before{content:"";position:absolute;top:21px;inset-inline:12%;height:2px;background:#cfd8ee}
+.pr::after{content:"";position:absolute;top:21px;inset-inline-start:12%;height:2px;width:0;background:linear-gradient(90deg,var(--blue),var(--teal),var(--purple));transition:width 2.2s ease}
+.pr.in::after{width:76%}
+.st{text-align:center;padding:0 12px;position:relative;z-index:1}
+.st .n{width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--teal);margin:0 auto 16px;display:grid;place-items:center;font-weight:700;color:var(--teal);font-family:Sora}
+.st h3{margin:0 0 6px;color:#0b1646}.st p{margin:0;color:#56608a;font-size:.95rem}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.trust div{background:var(--bg);padding:38px 30px}.trust h3{margin:0 0 8px;font-size:1.2rem}.trust p{margin:0;color:var(--mut)}
+.trust div::before{content:"";display:block;width:34px;height:3px;background:linear-gradient(90deg,var(--teal),var(--purple));margin-bottom:20px}
+.cta2{position:relative;background-size:cover;background-position:center;color:#fff;text-align:center;padding:130px 0}
+.cta2::before{content:"";position:absolute;inset:0;background:rgba(5,11,46,.72)}
+.cta2 .w{position:relative}.cta2 h2{margin-inline:auto}.cta2 p{opacity:.9;margin:0 auto 34px;max-width:34em}
+footer{background:#030720;color:#9aa6d6;padding:50px 0;direction:ltr}
+.fg{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.fl{background:#fff;border-radius:10px;padding:10px 18px}.fl img{height:38px}
+footer a:hover{color:#5eead4}footer .c{display:grid;gap:6px;font-size:.92rem}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:860px){nav{display:none}.two,.lg,.trust,.plat,.eco{grid-template-columns:1fr}.ph{position:static}.ph img{aspect-ratio:16/10}.pr{grid-template-columns:1fr 1fr;row-gap:36px}.pr::before,.pr::after{display:none}section{padding:72px 0}.banner{margin-bottom:60px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero .in{opacity:1;transform:none}}
+</style></head>
+<body>
+<header><div class="w nav">
+<a href="#top" aria-label="Mesk | V LAB AI"><img src="assets/mesk-vlab-logo.png" alt="Mesk | vlab Ai"></a>
+<nav><a href="#services" data-ar="التخصصات" data-en="Expertise"></a><a href="#lab" data-ar="المختبر" data-en="The Lab"></a><a href="#platforms" data-ar="المنصات" data-en="Platforms"></a><a href="#ecosystem" data-ar="مشاريعنا" data-en="Our work"></a><a href="#process" data-ar="المنهجية" data-en="Method"></a></nav>
+<div style="display:flex;gap:10px"><a class="btn" style="padding:9px 22px" href="#contact" data-ar="تواصل معنا" data-en="Contact"></a><button class="btn lang" id="lang">EN</button></div>
+</div></header>
+<main id="top">
+<div class="hero" style="background-image:url(assets/holographic-ai-city-network.jpg)"><div class="w">
+<div class="tag in" data-ar="مختبر متخصص في تدريب نماذج الذكاء الاصطناعي — قطر" data-en="AI model training laboratory — Qatar"></div>
+<h1 class="in" data-ar="ندرّب النماذج التي <em>تفهم</em> لغتكم وأسواقكم." data-en="We train models that <em>understand</em> your language and your market."></h1>
+<p class="lead in" data-ar="من إعداد البيانات إلى الضبط الدقيق والتقييم والإطلاق، نبني نماذج ذكاء اصطناعي مخصصة لمؤسسات المنطقة، بأولوية للغة العربية." data-en="From data preparation to fine-tuning, evaluation and deployment, we build custom AI models for organizations in the region, Arabic first."></p>
+<div class="cta in"><a class="btn" href="#contact" data-ar="ابدأ مشروعًا" data-en="Start a project"></a><a class="btn g" href="#lab" data-ar="شاهد كيف نعمل" data-en="See how we work"></a></div>
+</div></div>
+<div class="tick" aria-hidden="true"><div><span>FINE-TUNING</span><span>RLHF</span><span>LoRA</span><span>RAG</span><span>COMPUTER VISION</span><span>ARABIC NLP</span><span>EVALUATION</span><span>MLOPS</span><span>FINE-TUNING</span><span>RLHF</span><span>LoRA</span><span>RAG</span><span>COMPUTER VISION</span><span>ARABIC NLP</span><span>EVALUATION</span><span>MLOPS</span></div></div>
+
+<section id="services"><div class="w two">
+<div class="ph rv"><img src="assets/ai-city-intelligence-interface.jpg" alt="" loading="lazy"></div>
+<div><div class="k rv" data-ar="التخصصات" data-en="Expertise"></div>
+<h2 class="rv" data-ar="أربع قدرات تغطي دورة حياة النموذج" data-en="Four capabilities across the model lifecycle"></h2>
+<p class="sub rv" data-ar="نعمل مع فرقكم كشريك تقني، لا كمورّد أدوات فقط." data-en="We work with your teams as a technical partner, not only a tool vendor."></p>
+<div class="rows rv">
+<a class="row" href="#contact"><h3 data-ar="النماذج اللغوية العربية" data-en="Arabic Language Models"></h3><p data-ar="ضبط نماذج لغوية على بياناتكم ولهجاتكم ومصطلحات قطاعكم، مع قياس جودة الإجابات." data-en="Fine-tuning language models on your data, dialects and sector terminology, with measured answer quality."></p><b>←</b></a>
+<a class="row" href="#contact"><h3 data-ar="الرؤية الحاسوبية" data-en="Computer Vision"></h3><p data-ar="نماذج لتحليل الصور والفيديو، ومنها تحليل أداء لاعبي كرة القدم واكتشاف المواهب." data-en="Image and video models, including football performance analysis and talent discovery."></p><b>←</b></a>
+<a class="row" href="#contact"><h3 data-ar="هندسة البيانات والوسم" data-en="Data Engineering & Labeling"></h3><p data-ar="جمع وتنظيف ووسم مجموعات بيانات عالية الجودة، فهي أساس أي نموذج ناجح." data-en="Collecting, cleaning and labeling high-quality datasets, the foundation of any successful model."></p><b>←</b></a>
+<a class="row" href="#contact"><h3 data-ar="التقييم والنشر" data-en="Evaluation & Deployment"></h3><p data-ar="اختبار الدقة والعدالة والأمان، ثم نشر النموذج ومراقبته في الإنتاج." data-en="Testing accuracy, fairness and safety, then deploying and monitoring the model in production."></p><b>←</b></a>
+</div></div></div></section>
+
+<section class="lab" id="lab"><div class="banner" style="background-image:url(assets/futuristic-ai-research-lab.jpg)" role="img" aria-label="V LAB AI"></div>
+<div class="w lg">
+<div><div class="k rv" style="color:#5eead4" data-ar="داخل المختبر" data-en="Inside the lab"></div>
+<h2 class="rv" data-ar="كل تجربة تدريب مسجّلة وقابلة للقياس" data-en="Every training run is logged and measurable"></h2>
+<p class="sub rv" style="margin:0" data-ar="نتتبع كل مرحلة بمقاييس واضحة، فتعرفون بالضبط ما الذي تحسّن وما الذي لم يتحسن. السجل المعروض مثال توضيحي." data-en="We track every stage with clear metrics, so you know exactly what improved and what did not. The log shown is illustrative."></p></div>
+<div class="term rv"><div class="bar"><i></i><i></i><i></i></div><pre id="log"></pre></div>
+</div><div style="height:100px"></div></section>
+
+<section id="platforms"><div class="w">
+<div class="k rv" data-ar="المنصات" data-en="Platforms"></div>
+<h2 class="rv" data-ar="منصات رقمية ذكية تعمل فوق النماذج" data-en="Intelligent platforms built on top of the models"></h2>
+<p class="sub rv" data-ar="مع شركتنا الأم Mesk نحوّل النماذج إلى منصات وأنظمة أعمال جاهزة للاستخدام." data-en="With our parent company Mesk, we turn models into ready-to-use platforms and business systems."></p>
+<div class="plat">
+<div class="pc rv"><img src="assets/modern-analytics-dashboard-workspace.jpg" alt="" loading="lazy"><div><h3 data-ar="لوحات إدارة وتحليلات" data-en="Management & analytics dashboards"></h3><p data-ar="تصور توضيحي" data-en="Illustrative concept"></p></div></div>
+<div class="pc rv"><img src="assets/futuristic-outdoor-advertising-strategy-meeting.jpg" alt="" loading="lazy"><div><h3 data-ar="منصة الإعلانات الخارجية الذكية" data-en="Smart outdoor advertising platform"></h3><p data-ar="تصور توضيحي" data-en="Illustrative concept"></p></div></div>
+</div></section>
+
+<section id="ecosystem" style="background:var(--soft)"><div class="w">
+<div class="k rv" data-ar="منظومة Mesk" data-en="The Mesk ecosystem"></div>
+<h2 class="rv" data-ar="أربعة مجالات نعمل فيها، والذكاء الاصطناعي يجمعها" data-en="Four fields we work in, connected by AI"></h2>
+<p class="sub rv" data-ar="V LAB AI هو الذراع البحثي لشركة Mesk، وتستفيد منه مشاريعنا في الرياضة والصحة والتدريب." data-en="V LAB AI is the research arm of Mesk, and our projects in sports, health and training benefit from it."></p>
+<div class="eco rv">
+<a href="https://www.el7lm.com/" target="_blank" rel="noopener"><div class="lt" style="background:#fff;border:1px solid #e4e8f3"><img src="assets/el7lm-logo.png" alt="EL7LM"></div><h3 data-ar="EL7LM — منصة كرة القدم" data-en="EL7LM — football platform"></h3><p data-ar="منصة متكاملة لإدارة كرة القدم واللاعبين والأندية، مع دعم الأندية والفرق العالمية." data-en="An integrated platform for managing football, players and clubs, supporting clubs and international teams."></p><i>www.el7lm.com ↗</i></a>
+<a href="https://hagzz.el7lm.com/" target="_blank" rel="noopener"><div class="lt" style="background:#0b1230"><img src="assets/hagzz-logo.png" alt="Hagzz"></div><h3 data-ar="Hagzz — حجز الملاعب وإدارة الأكاديميات" data-en="Hagzz — facility booking & academy management"></h3><p data-ar="تطبيق لحجز الملاعب والحصص التدريبية، ونظام ERP لإدارة الأندية والأكاديميات، ويعمل مع أكاديميات في قطر والمنطقة." data-en="An app for booking courts and training sessions, plus an ERP for clubs and academies, used by academies in Qatar and the region."></p><i>hagzz.el7lm.com ↗</i></a>
+<div><div class="bar2"></div><h3 data-ar="الرعاية الصحية والطب عن بعد" data-en="Healthcare & telemedicine"></h3><p data-ar="حلول رقمية للرعاية الصحية وخدمات الطب عن بعد." data-en="Digital solutions for healthcare and telemedicine services."></p></div>
+<div><div class="bar2"></div><h3 data-ar="تدريب الأفراد على الذكاء الاصطناعي" data-en="Training people for AI and the job market"></h3><p data-ar="برامج تدريب تؤهل الأفراد للتعامل مع الذكاء الاصطناعي ومتطلبات سوق العمل." data-en="Training programs that prepare people to work with AI and meet job-market demands."></p></div>
+</div></div></section>
+
+<section id="process" class="wave" style="background-image:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)),url(assets/flowing-blue-data-waves.jpg)"><div class="w">
+<div class="k rv" data-ar="المنهجية" data-en="Method"></div>
+<h2 class="rv" style="color:#0b1646" data-ar="من الفكرة إلى الإنتاج في أربع مراحل" data-en="From idea to production in four stages"></h2>
+<p class="sub rv" style="color:#3b4570" data-ar="مراحل واضحة، ومخرجات محددة في نهاية كل مرحلة." data-en="Clear stages with defined deliverables at the end of each."></p>
+<div class="pr rv">
+<div class="st"><div class="n">1</div><h3 data-ar="الاكتشاف" data-en="Discovery"></h3><p data-ar="تحديد المشكلة والبيانات ومعايير النجاح." data-en="Defining the problem, data and success metrics."></p></div>
+<div class="st"><div class="n">2</div><h3 data-ar="التدريب" data-en="Training"></h3><p data-ar="بناء النموذج وضبطه على بياناتكم." data-en="Building and fine-tuning on your data."></p></div>
+<div class="st"><div class="n">3</div><h3 data-ar="التقييم" data-en="Evaluation"></h3><p data-ar="اختبار الأداء والعدالة والأمان." data-en="Testing performance, fairness and safety."></p></div>
+<div class="st"><div class="n">4</div><h3 data-ar="الإطلاق" data-en="Deployment"></h3><p data-ar="نشر النموذج ومراقبته وتحسينه." data-en="Deploying, monitoring and improving."></p></div>
+</div></div></section>
+
+<section id="trust"><div class="w">
+<div class="k rv" data-ar="الثقة" data-en="Trust"></div>
+<h2 class="rv" data-ar="مبادئ نلتزم بها في كل مشروع" data-en="Principles we apply to every project"></h2>
+<div style="height:30px"></div>
+<div class="trust rv">
+<div><h3 data-ar="خصوصية البيانات" data-en="Data privacy"></h3><p data-ar="بياناتكم تبقى لكم، ونعمل ضمن متطلبات الجهات التنظيمية في المنطقة." data-en="Your data stays yours, within regional regulatory requirements."></p></div>
+<div><h3 data-ar="العربية أولًا" data-en="Arabic first"></h3><p data-ar="نختبر النماذج على العربية الفصحى واللهجات الخليجية والمصرية." data-en="We test models on Modern Standard Arabic and Gulf and Egyptian dialects."></p></div>
+<div><h3 data-ar="شفافية القياس" data-en="Transparent metrics"></h3><p data-ar="تقارير تقييم واضحة قبل أي إطلاق." data-en="Clear evaluation reports before any launch."></p></div>
+</div></div></section>
+
+<div class="cta2" id="contact" style="background-image:url(assets/human-and-robot-touching-digital-globe.jpg)"><div class="w">
+<h2 data-ar="الإنسان والذكاء الاصطناعي، معًا" data-en="Human talent, amplified by AI"></h2>
+<p data-ar="أخبرونا بالمشكلة التي تريدون حلها بالذكاء الاصطناعي، ونرد بخطة أولية." data-en="Tell us the problem you want to solve with AI, and we reply with an initial plan."></p>
+<div class="cta" style="justify-content:center"><a class="btn" href="https://wa.me/97470542458" data-ar="راسلنا على واتساب" data-en="Message on WhatsApp"></a><a class="btn g" href="mailto:info@el7lm.com">info@el7lm.com</a></div>
+</div></div>
+</main>
+<footer><div class="w fg"><div class="fl"><img src="assets/mesk-vlab-logo.png" alt="Mesk | vlab Ai"></div>
+<div class="c"><a href="https://mesk.el7lm.com/">mesk.el7lm.com</a><a href="https://www.el7lm.com/">www.el7lm.com</a><a href="https://hagzz.el7lm.com/">hagzz.el7lm.com</a><a href="mailto:info@el7lm.com">info@el7lm.com</a><a href="tel:+97470542458">+974 7054 2458</a></div>
+<div>© 2026 Mesk LLC</div></div></footer>
+<script>
+const $=s=>document.querySelector(s),L=$('#lang');
+let cur='ar';try{cur=localStorage.getItem('lang')||'ar'}catch(e){}
+function setLang(l){const r=document.documentElement;r.lang=l;r.dir=l==='ar'?'rtl':'ltr';
+document.querySelectorAll('[data-ar]').forEach(e=>e.innerHTML=e.dataset[l]);L.textContent=l==='ar'?'EN':'ع';
+document.querySelectorAll('.row b').forEach(b=>b.textContent=l==='ar'?'←':'→');
+try{localStorage.setItem('lang',l)}catch(e){}}
+setLang(cur);L.onclick=()=>{cur=cur==='ar'?'en':'ar';setLang(cur)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const lines=['<span class="g2">$</span> vlab train --model arabic-llm --data client_corpus','loading dataset ............ <span class="ok">ok</span>','tokenizer: arabic-bpe · dialects: msa, gulf, egy','epoch 01  loss 2.41  val 2.38','epoch 05  loss 1.62  val 1.70','epoch 12  loss 1.11  val 1.24','epoch 20  loss 0.84  val 1.02','running evaluation suite ... <span class="ok">pass</span>','<span class="g2">→ checkpoint saved. report ready.</span>'];
+const lg=$('#log');let li=0;
+function tl(){lg.innerHTML=lines.slice(0,li).join('\n')+'\n<span class="cur"></span>';if(li<lines.length){li++;setTimeout(tl,red?0:850)}else setTimeout(()=>{li=1;tl()},4500)}
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){li=red?lines.length:1;tl();o.disconnect()}}).observe(lg);
+</script></body></html>
